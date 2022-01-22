@@ -3,8 +3,16 @@
 from dbg_utils_blc import *
 
 names = ["Retry_88", "OVALEXOLK", "Dashut", "Senko_"]
+names2 = ["Nimoryan"]
+timing = datetime.datetime.now()
 
-update("Retry", names)
+while True:
+    if(datetime.datetime.now() >= timing):
+        timing = datetime.datetime.now()+datetime.timedelta(minutes = 60)
+        update("Retry", names)
+        update("Nimoryan", names2)
+    else:
+        time.sleep(2)
 
 # setup("Retry", 60, names)
 

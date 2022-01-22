@@ -6,9 +6,9 @@ payload = {
 }
 
 headers = ["name acc: OVALEXOLK adress: 6226 S Archer Ave (Chicago)",
-"name acc: Retry_88  Adress: 100 Portales Real (Bakersfield)",
-"name acc: Dashut  Adress: 204 Skeet CT (Bakersfield)",
-"name acc: Senko_  Adress:  6617 Hammond Way (Bakersfield)",
+"name acc: Retry_88 Adress: 100 Portales Real (Bakersfield)",
+"name acc: Dashut Adress: 204 Skeet CT (Bakersfield)",
+"name acc: Senko_ Adress: 6617 Hammond Way (Bakersfield)",
 "name acc: Nimoryan"
 ]
 

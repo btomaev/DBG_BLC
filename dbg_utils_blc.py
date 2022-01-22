@@ -6,32 +6,20 @@ from data import *
 
 table = {}
 pl_names = []
-pl_types = []
 pl_teams = []
 pl_leggits = []
 pl_mints = []
 pl_seasons = []
-pl_tiers = []
 pl_users = []
 pl_score = []
 index = []
-last_user = ''
-grade = 0
 counter = 0
-driver = None
-ready = True
-request_driver = None
-old_raw_messages = None
 timing = datetime.datetime.now()
-file_name = ""
-names = []
-wait = 0
 
 def begin():
-    global table, pl_names, pl_types, pl_teams, pl_leggits, pl_mints, pl_seasons, pl_tiers, pl_users, pl_score, last_user, index, counter, grade, ready
+    global table, pl_names, pl_teams, pl_leggits, pl_mints, pl_seasons, pl_users, pl_score, index, counter
     table = {}
     pl_names = []
-    pl_types = []
     pl_teams = []
     pl_leggits = []
     pl_mints = []
@@ -42,22 +30,17 @@ def begin():
     emty = []
     info = []
     index = []
-    last_user = ''
     counter = 0
-    grade = 0
-    ready = True
-
-def setup(f_name, waitfor, name_list):
-    
-    print("\n=====================\nБот запущен, все ОК!\n=====================\n")
 
 def update(file_name, names):
-    global table, pl_names, pl_types, pl_teams, pl_leggits, pl_mints, pl_seasons, pl_users, pl_score, last_user, index, counter
+    global table, pl_names, pl_teams, pl_leggits, pl_mints, pl_seasons, pl_users, pl_score, index, counter
+    begin()
     for name in names:
         print(name)
         for head in headers:
             if(name.lower() in head.lower()):
                 header = head
+                print(head)
         pl_names.append("redify"+header) 
         index.append('redify#')
         pl_teams.append('redify')
@@ -104,6 +87,7 @@ def update(file_name, names):
     html = open('./'+file_name+'.html', "r").read()
     open('./'+file_name+'.html', "w").write(unistyle+"\n"+html.replace("<td>redify","<td class='redify'>").replace("<th>redify","<td class='redify'>"))
     files = {'file': open('./'+file_name+'.html','rb')}
+    print("sending...")
     print(requests.post("http://uplandia.pythonanywhere.com/lgtupdate", files=files).text)
 
 def request(name):
